@@ -22,9 +22,7 @@ def tick(t):
     global x, y, z
     global count
     if count < ITERATIONS:
-        x += D*s*(y - x)
-        y += D*(x*(r - z) - y)
-        z += D*(x*y - b*z)
+        x,y,z = x + D*s*(y - x), y + D*(x*(r - z) - y), z + D*(x*y - b*z)
         Point((x,y), size=4, color=pointcolor(z))
         count += 1
         if count == ITERATIONS:
