@@ -16,7 +16,7 @@ ITERATIONS = 1000
 count = 0
 
 def pointcolor(z):
-    return Color((int(10*(z-17))&255)*0x10000 + int(10*(z-17))&255, 1.0)
+    return Color(int(f"{int(10*(z-17))&255:02X}00{int(10*(z-17))&255:02X}", base=16), 1.0)
 
 def tick(t):
     global x, y, z
